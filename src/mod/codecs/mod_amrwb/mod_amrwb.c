@@ -282,7 +282,7 @@ static switch_status_t switch_amrwb_init(switch_codec_t *codec, switch_codec_fla
 			switch_snprintf(fmtptmp, sizeof(fmtptmp), "octet-align=%d; mode-set=%d",
 					switch_test_flag(context, AMRWB_OPT_OCTET_ALIGN) ? 1 : 0, context->enc_mode);
 		} else {
-			switch_snprintf(fmtptmp, sizeof(fmtptmp), "octet-align=%d; mode-set=%d; max-red=0; mode-change-capability=2",
+			switch_snprintf(fmtptmp, sizeof(fmtptmp), "octet-align=%d; mode-set=%d; max-red=0; mode-change-capability=2; maxptime=20",
 					switch_test_flag(context, AMRWB_OPT_OCTET_ALIGN) ? 1 : 0, context->enc_mode);
 		}
 		codec->fmtp_out = switch_core_strdup(codec->memory_pool, fmtptmp);
